@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
+import androidx.room.Update;
 
 import java.util.List;
 
@@ -17,4 +18,7 @@ public interface DAO {
     LiveData< List<Alumno> > obtenerListado();
     @Query("DELETE FROM alumno")
     void eliminarTODO();
+
+    @Update
+    void modificar(Alumno alumno);
 }

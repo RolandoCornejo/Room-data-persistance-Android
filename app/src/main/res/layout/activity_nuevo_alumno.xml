@@ -57,4 +57,11 @@
         android:layout_marginHorizontal="10dp"
         android:id="@+id/guardarBtn"
         android:text="Guardar"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:id="@+id/editarBtn"
+        android:text="Editar"/>
 </LinearLayout>

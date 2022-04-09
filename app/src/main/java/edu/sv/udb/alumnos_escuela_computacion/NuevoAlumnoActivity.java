@@ -39,5 +39,20 @@ public class NuevoAlumnoActivity extends AppCompatActivity {
                 startActivity(atras);
             }
         });
+
+        final Button editarBtn=findViewById(R.id.editarBtn);
+        editarBtn.setOnClickListener(view -> {
+            Intent principal = new Intent();
+            if(TextUtils.isEmpty(carnetET.getText())){
+                Toast.makeText(this, "El campo carnet es requeridos", Toast.LENGTH_SHORT).show();
+            }else{
+                //Se guarda el alumno y luego se regresaa la actividad principal
+                Intent atras = new Intent(this,MainActivity.class);
+                rep= new Repositorio(this.getApplication());
+                Alumno alumno=new Alumno(carnetET.getText().toString(),nombreET.getText().toString(),planET.getText().toString(),emailET.getText().toString(),telefonoET.getText().toString(),direccionET.getText().toString());
+                rep.modificar(alumno);
+                startActivity(atras);
+            }
+        });
     }
 }

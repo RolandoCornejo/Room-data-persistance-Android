@@ -23,6 +23,12 @@ public class Repositorio {
             repoDAO.insertar(alumno);
         });
     }
+
+    void modificar(Alumno alumno){
+        BaseAlumnos.ejecutorBase.execute(()->{
+            repoDAO.modificar(alumno);
+        });
+    }
     LiveData<List<Alumno>> obtenerLista(){
         return todosAlumnos;
     }
