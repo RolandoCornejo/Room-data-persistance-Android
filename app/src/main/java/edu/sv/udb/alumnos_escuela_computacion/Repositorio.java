@@ -29,8 +29,17 @@ public class Repositorio {
             repoDAO.modificar(alumno);
         });
     }
+    void eliminarA(Alumno alumno){
+        BaseAlumnos.ejecutorBase.execute(()->{
+            repoDAO.eliminarA(alumno);
+        });
+    }
+
+
     LiveData<List<Alumno>> obtenerLista(){
         return todosAlumnos;
     }
+
+
 
 }
